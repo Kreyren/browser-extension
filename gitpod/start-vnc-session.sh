@@ -63,7 +63,7 @@ DISTRO=debian
 
 # NOTICE(Krey): Start noVNC session
 case "$DISTRO" in
-	debian) novncLaunch="/usr/share/novnc/" ;;
+	debian) novncLaunch="/usr/share/novnc/utils/launch.sh" ;;
 	ubuntu) novncLaunch="/opt/novnc/utils/launch.sh" ;;
 	*) die 1 "Unsupported distribution '$DISTRO' parsed in $myName"
 esac
