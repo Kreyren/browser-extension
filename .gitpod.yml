@@ -1,2 +1,4 @@
 tasks:
+- init: apt install -y firefox-esr
+- init: apt install -y chromium
 - init: yarn install && yarn build
