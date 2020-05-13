@@ -30,7 +30,7 @@ else
 	die 255 "Processing DISPLAY variable in $myName"
 fi
 
-DISP="${DISPLAY##?}"
+DISP="${DISPLAY:1}"
 
 # FIXME-DOCS(Krey): According to wiki Xvfb is also used for remote control.  (why?)
 if command -v Xvfb >/dev/null; then
@@ -45,8 +45,8 @@ fi
 # FIXME(Krey): Sanitize
 $WINDOW_MANAGER &
 
-VNC_PORT="$((5900 + $DISP))"
-NOVNC_PORT="$((6080 + $DISP))"
+VNC_PORT="$((5900 + DISP))"
+NOVNC_PORT="$((6080 + DISP))"
 
 # FIXME-DOCS(Krey)
 if command -v x11vnc >/dev/null; then
