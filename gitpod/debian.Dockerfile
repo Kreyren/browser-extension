@@ -8,4 +8,5 @@ RUN true \
   && apt install -y \
     novnc \
     firefox-esr \
-    chromium
+    chromium \
+    yarn
