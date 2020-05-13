@@ -12,6 +12,15 @@ set -e
 
 myName="Script start-vnc-session"
 
+# FIXME: Implement standard
+die() {
+	case "$1" in
+		*) printf 'FATAL: %s\n' "$2" ;;
+	esac
+
+	exit "$1"
+}
+
 # NOTICE(Krey): We need DISPLAY variable to point to something
 if [ -z "$DISPLAY" ]; then
 	DISPLAY=":0"
