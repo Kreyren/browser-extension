@@ -6,15 +6,25 @@ ENV WINDOW_MANAGER="openbox"
 
 USER root
 
-# NOTICE(Krey): Required for testing of the extension on gitpod
+# Get novnc dependencies
 RUN true "" \
 	&& apt-get update \
 	&& apt-get install -y \
 		xvfb \
 		openbox \
-		novnc \
+		novnc
+
+# NOTICE(Krey): Required for testing of the extension on gitpod
+RUN true "" \
+	&& apt-get update \
+	&& apt-get install -y \
 		firefox-esr \
-		chromium \
+		chromium
+
+# Get misc
+RUN true "" \
+	&& apt-get update \
+	&& apt-get install -y \
 		yarn \
 		wget \
 		npm \
