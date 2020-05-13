@@ -6,8 +6,8 @@ USER root
 
 # NOTICE(Krey): Required for testing of the extension on gitpod
 RUN true \
-  && apt update \
-  && apt install -y \
+  && apt-get update \
+  && apt-get install -y \
     novnc \
     firefox-esr \
     chromium \
