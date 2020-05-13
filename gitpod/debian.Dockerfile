@@ -7,7 +7,7 @@ ENV WINDOW_MANAGER="openbox"
 USER root
 
 # Get novnc dependencies
-RUN true "replace" \
+RUN true "" \
 	&& apt-get update \
 	&& apt-get install -y \
 		xvfb \
@@ -15,14 +15,14 @@ RUN true "replace" \
 		novnc
 
 # NOTICE(Krey): Required for testing of the extension on gitpod
-RUN true "replace" \
+RUN true "" \
 	&& apt-get update \
 	&& apt-get install -y \
 		firefox-esr \
 		chromium
 
 # Get misc
-RUN true "replace" \
+RUN true "" \
 	&& apt-get update \
 	&& apt-get install -y \
 		yarn \
