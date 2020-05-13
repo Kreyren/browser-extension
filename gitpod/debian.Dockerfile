@@ -39,12 +39,6 @@ RUN true "" \
 RUN echo "export DISPLAY=:0" >> ~/.bashrc
 RUN echo "[ ! -e /tmp/.X0-lock ] && (/usr/bin/start-vnc-session.sh &> /tmp/display-\${DISPLAY}.log)" >> ~/.bashrc
 
-### checks ###
-# no root-owned files in the home directory
-RUN notOwnedFile=$(find . -not "(" -user gitpod -and -group gitpod ")" -print -quit) \
-    && { [ -z "$notOwnedFile" ] \
-        || { echo "Error: not all files/dirs in $HOME are owned by 'gitpod' user & group"; exit 1; } }
-
 COPY gitpod/start-vnc-session.sh /usr/bin/start-vnc-session
 # RUN true "replace" \
 # 	&& chmod -x /usr/bin/start-vnc-session \
