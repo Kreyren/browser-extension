@@ -71,7 +71,7 @@ esac
 if [ -f "$novncLaunch" ]; then
 	if [ ! -x "$novncLaunch" ]; then
 		chmod +x "$novncLaunch" || die 1 "Unable to set executable permission on file $novncLaunch"
-	elif [ ! -x "$novncLaunch" ]; then
+	elif [ -x "$novncLaunch" ]; then
 		true
 	else
 		die 255 "Setting executable permission on $novncLaunch in $myName"
