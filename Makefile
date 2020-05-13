@@ -9,7 +9,7 @@ gitpod-common:
 	@ gp preview yolo || true
 
 test-gitpod: gitpod-common
-	@ gp preview https://gitpod.io/#rebuildhttps://github.com/Kreyren/gitpod-browser-extension/tree/test-implementation
+	@ gp preview https://gitpod.io/#rebuilthttps://github.com/Kreyren/gitpod-browser-extension/tree/test-implementation
 
 test-gitpod-staging: gitpod-common
 	@ gp preview https://gitpod-staging.com/#https://github.com/Kreyren/gitpod-browser-extension/tree/test-implementation
