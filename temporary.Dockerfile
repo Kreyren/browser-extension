@@ -34,7 +34,7 @@ RUN true "" \
 		dlocate
 
 COPY gitpod/start-vnc-session.sh /usr/bin/start-vnc-session
-RUN true "CjZCbuYS4z" \
+RUN true "uN3hwkhPxH" \
 	&& chmod -x /usr/bin/start-vnc-session \
 	&& chmod +x /usr/bin/start-vnc-session \
 	&& /usr/bin/start-vnc-session

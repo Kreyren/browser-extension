@@ -59,8 +59,12 @@ else
 fi
 
 # NOTICE(Krey): Start noVNC session
-# On Ubuntu: novncLaunch="/opt/novnc/utils/launch.sh"
-novncLaunch="/usr/share/novnc/"
+case "$DISTRO" in
+	debian) novncLaunch="/usr/share/novnc/" ;;
+	ubuntu) novncLaunch="/opt/novnc/utils/launch.sh" ;;
+	*) die 1 "Unsupported distribution '$DISTRO' parsed in $myName"
+esac
+
 if [ -f "$novncLaunch" ]; then
 	if [ ! -x "$novncLaunch" ]; then
 		chmod +x "$novncLaunch" || die 1 "Unable to set executable permission on file $novncLaunch"
