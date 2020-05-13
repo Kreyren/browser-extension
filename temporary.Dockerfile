@@ -31,8 +31,8 @@ RUN true "" \
 		shellcheck \
 		dlocate
 
-COPY gitpod/start-vnc-session.sh /usr/bin/start-vnc/session
-RUN true "rN92PYNsyn" \
+COPY gitpod/start-vnc-session.sh /usr/bin/start-vnc-session
+RUN true "D4qqXP1uRk" \
 	&& chmod -x /usr/bin/start-vnc-session \
 	&& chmod +x /usr/bin/start-vnc-session \
 	&& /usr/bin/start-vnc-session

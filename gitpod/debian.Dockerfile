@@ -31,7 +31,7 @@ RUN true "" \
 		shellcheck \
 		dlocate
 
-COPY gitpod/start-vnc-session.sh /usr/bin/start-vnc/session
+COPY gitpod/start-vnc-session.sh /usr/bin/start-vnc-session
 RUN true "replace" \
 	&& chmod -x /usr/bin/start-vnc-session \
 	&& chmod +x /usr/bin/start-vnc-session \
