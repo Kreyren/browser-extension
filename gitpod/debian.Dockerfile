@@ -6,6 +6,7 @@ USER root
 RUN true \
   && apt update \
   && apt install -y \
+    novnc \
     firefox-esr \
     chromium
 
