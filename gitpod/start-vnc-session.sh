@@ -58,6 +58,9 @@ else
 	die 255 "Processing x11vnc in $myName"
 fi
 
+# DNM
+DISTRO=debian
+
 # NOTICE(Krey): Start noVNC session
 case "$DISTRO" in
 	debian) novncLaunch="/usr/share/novnc/" ;;
