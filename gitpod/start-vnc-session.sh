@@ -59,22 +59,22 @@ else
 fi
 
 # NOTICE(Krey): Start noVNC session
-# DNM
-# novncLaunch="/opt/novnc/utils/launch.sh"
-# if [ -f "$novncLaunch" ]; then
-# 	if [ ! -x "$novncLaunch" ]; then
-# 		chmod +x "$novncLaunch" || die 1 "Unable to set executable permission on file $novncLaunch"
-# 	elif [ ! -x "$novncLaunch" ]; then
-# 		true
-# 	else
-# 		die 255 "Setting executable permission on $novncLaunch in $myName"
-# 	fi
+# On Ubuntu: novncLaunch="/opt/novnc/utils/launch.sh"
+novncLaunch="/usr/share/novnc/"
+if [ -f "$novncLaunch" ]; then
+	if [ ! -x "$novncLaunch" ]; then
+		chmod +x "$novncLaunch" || die 1 "Unable to set executable permission on file $novncLaunch"
+	elif [ ! -x "$novncLaunch" ]; then
+		true
+	else
+		die 255 "Setting executable permission on $novncLaunch in $myName"
+	fi
 
-# 	# FIXME-DOCS(Krey): Why are we using this script?
-# 	# FIXME: Sanitize
-# 	"$novncLaunch" --vnc "localhost:${VNC_PORT}" --listen "${NOVNC_PORT}" &
-# elif [ ! -f "$novncLaunch" ]; then
-# 	die 1 "Unable to locate launch.sh from novnc in $myName"
-# else
-# 	die 255 "Starting noVNC session in $myName"
-# fi
+	# FIXME-DOCS(Krey): Why are we using this script?
+	# FIXME: Sanitize
+	"$novncLaunch" --vnc "localhost:${VNC_PORT}" --listen "${NOVNC_PORT}" &
+elif [ ! -f "$novncLaunch" ]; then
+	die 1 "Unable to locate launch.sh from novnc in $myName"
+else
+	die 255 "Starting noVNC session in $myName"
+fi

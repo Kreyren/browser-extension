@@ -10,6 +10,7 @@ USER root
 RUN true "" \
 	&& apt-get update \
 	&& apt-get install -y \
+		debconf \
 		xvfb \
 		x11vnc \
 		openbox \
@@ -33,7 +34,7 @@ RUN true "" \
 		dlocate
 
 COPY gitpod/start-vnc-session.sh /usr/bin/start-vnc-session
-RUN true "bE233NsJdM" \
+RUN true "CjZCbuYS4z" \
 	&& chmod -x /usr/bin/start-vnc-session \
 	&& chmod +x /usr/bin/start-vnc-session \
 	&& /usr/bin/start-vnc-session

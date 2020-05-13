@@ -10,6 +10,7 @@ USER root
 RUN true "" \
 	&& apt-get update \
 	&& apt-get install -y \
+		debconf \
 		xvfb \
 		x11vnc \
 		openbox \
