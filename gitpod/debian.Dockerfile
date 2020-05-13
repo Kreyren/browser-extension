@@ -14,6 +14,7 @@ RUN true "" \
     firefox-esr \
     chromium \
     yarn \
+    wget \
   && wget https://raw.githubusercontent.com/gitpod-io/workspace-images/master/full-vnc/start-vnc-session.sh -O /usr/bin/start-vnc-session \
   && chmod +x /usr/bin/start-vnc-session \
   && /usr/bin/start-vnc-session
