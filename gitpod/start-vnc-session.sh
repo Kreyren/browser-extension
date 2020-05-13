@@ -30,7 +30,7 @@ else
 	die 255 "Processing DISPLAY variable in $myName"
 fi
 
-DISP="${DISPLAY:1}"
+DISP="${DISPLAY##?}"
 
 # FIXME-DOCS(Krey): According to wiki Xvfb is also used for remote control.  (why?)
 if command -v Xvfb >/dev/null; then
