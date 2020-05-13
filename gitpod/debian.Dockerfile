@@ -11,6 +11,7 @@ RUN true "" \
 	&& apt-get update \
 	&& apt-get install -y \
 		xvfb \
+		x11vnc \
 		openbox \
 		novnc
 
