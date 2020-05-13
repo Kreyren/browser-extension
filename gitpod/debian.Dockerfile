@@ -9,4 +9,3 @@ RUN true \
     novnc \
     firefox-esr \
     chromium
-
