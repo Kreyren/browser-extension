@@ -1,5 +1,5 @@
 image:
-  file: debian/gitpod.Dockerfile
+  file: gitpod/debian.Dockerfile
 
 tasks:
 - init: npm run build
