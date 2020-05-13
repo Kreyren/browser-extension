@@ -7,7 +7,7 @@ ENV WINDOW_MANAGER="openbox"
 USER root
 
 # Get novnc dependencies
-RUN true "t44LwDT1qV" \
+RUN true "D0B1b6zmSm" \
 	&& apt-get update \
 	&& apt-get install -y \
 		xvfb \
@@ -15,14 +15,14 @@ RUN true "t44LwDT1qV" \
 		novnc
 
 # NOTICE(Krey): Required for testing of the extension on gitpod
-RUN true "t44LwDT1qV" \
+RUN true "D0B1b6zmSm" \
 	&& apt-get update \
 	&& apt-get install -y \
 		firefox-esr \
 		chromium
 
 # Get misc
-RUN true "t44LwDT1qV" \
+RUN true "D0B1b6zmSm" \
 	&& apt-get update \
 	&& apt-get install -y \
 		yarn \
@@ -32,6 +32,6 @@ RUN true "t44LwDT1qV" \
 		dlocate
 
 COPY gitpod/start-vnc-session.sh /usr/bin/start-vnc/session
-RUN true "t44LwDT1qV" \
+RUN true "D0B1b6zmSm" \
 	&& chmod +x /usr/bin/start-vnc-session \
 	&& /usr/bin/start-vnc-session
