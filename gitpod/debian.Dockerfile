@@ -52,4 +52,4 @@ RUN if ! grep -qF 'ix()' /etc/bash.bashrc; then printf '%s\n' \
 	>> /etc/bash.bashrc; fi
 
 # DNM: Death is only the beginning!
-RUN exit 88
+RUN echo ping; exit 88
