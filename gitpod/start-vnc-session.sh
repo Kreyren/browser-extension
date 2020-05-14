@@ -42,9 +42,6 @@ else
 	die 255 "Processing Xvfb in $myName"
 fi
 
-# FIXME(Krey): Sanitize
-$WINDOW_MANAGER &
-
 VNC_PORT="$((5900 + DISP))"
 NOVNC_PORT="$((6080 + DISP))"
 
@@ -57,6 +54,9 @@ elif ! command -v x11vnc >/dev/null; then
 else
 	die 255 "Processing x11vnc in $myName"
 fi
+
+# FIXME(Krey): Sanitize
+$WINDOW_MANAGER &
 
 # DNM
 DISTRO=debian
