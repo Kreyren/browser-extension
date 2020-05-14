@@ -50,7 +50,7 @@ NOVNC_PORT="$((6080 + DISP))"
 
 # FIXME-DOCS(Krey)
 if command -v x11vnc >/dev/null; then
-	x11vnc -localhost -shared -display :$DISP -forever -rfbport ${VNC_PORT} -bg -o "/tmp/x11vnc-${DISP}.log"
+	x11vnc -localhost -shared -display :$DISP -forever -rfbport ${VNC_PORT} -bg -o "/tmp/x11vnc-${DISP}.log" || die 1 "Command 'x11vnc' returned false, (FIXME-DOCS)"
 elif ! command -v x11vnc >/dev/null; then
 	# FIXME(Krey): Implement logic to get the package on system
 	die 1 "Command 'x11vnc' is not executable on this system, unable to configure novnc for theia"
