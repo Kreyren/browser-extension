@@ -44,3 +44,9 @@ COPY gitpod/start-vnc-session.sh /usr/bin/start-vnc-session
 # 	&& chmod -x /usr/bin/start-vnc-session \
 # 	&& chmod +x /usr/bin/start-vnc-session \
 # 	&& /usr/bin/start-vnc-session
+
+# Add custom functions
+RUN if ! grep -qF 'ix()' /etc/bash.bashrc; then printf '%s\n' \
+	'# Custom' \
+	"ix() { curl -F 'f:1=<-' ix.io 2>/dev/null ;}" \
+	>> /etc/bash.bashrc; fi
