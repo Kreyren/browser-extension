@@ -6,6 +6,7 @@ module.exports = {
     entry: {
         gitpodify: './dist/gitpodify.js',
         options: './dist/options/options.js',
+        background: './dist/background.js'
     },
     output: {
         filename: 'bundles/[name].bundle.js',
@@ -21,10 +22,7 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 enforce: 'pre',
-                loader: 'source-map-loader'
             }
         ]
     }
 };
-
-module.exports.devtool = 'source-map';

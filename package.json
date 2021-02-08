@@ -2,12 +2,15 @@
   "private": true,
   "name": "gitpod-web-extension",
   "version": "0.0.1",
-  "license": "UNLICENSED",
-  "description": "Browser extension (Chrome/Firefox) for Enhancing Github and Gitlab with Gitpod links",
+  "license": "MIT",
+  "description": "Browser extension (Chrome/Firefox/Edge) for enhancing GitLab, GitHub and Bitbucket with Gitpod buttons",
   "main": "src/gitpodify.js",
   "scripts": {
     "build": "yarn clean && npx tsc && yarn webpack",
-    "clean": "rimraf dist",
+    "build:safari": " xcrun safari-web-extension-converter . --app-name Gitpod --bundle-identifier io.gitpod.Gitpod",
+    "package": "yarn clean:package && zip -rD --exclude='src/*.ts' gitpod.xpi dist/bundles icons src manifest.json",
+    "clean": "rimraf dist && yarn clean:package",
+    "clean:package": "rimraf gitpod.xpi",
     "webpack": "webpack",
     "watch": "webpack -w"
   },

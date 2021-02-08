@@ -3,12 +3,12 @@ import { EventEmitter } from "events";
 
 export interface Config {
     gitpodURL: string;
-    injectIntoDomains: string[];
+    openAsPopup: boolean;
 }
 
 export const DEFAULT_CONFIG: Config = {
     gitpodURL: "https://gitpod.io",
-    injectIntoDomains: ["github.com","gitlab.com"]
+    openAsPopup: false
 };
 
 export interface ConfigListener {
